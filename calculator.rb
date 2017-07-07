@@ -37,7 +37,7 @@ class Calculator
       left = @stack.pop()
 
       # See https://stackoverflow.com/a/20019672/2747593
-      return left.method(arg).(right)
+      return self.push(left.method(arg).(right))
     else
       message = "argument must be number or operator. Argument was: " + arg
       throw ArgumentError.new(message)
