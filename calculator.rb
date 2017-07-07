@@ -36,7 +36,7 @@ class Calculator
       if @stack.length < 2
         message = "operator applied when stack has " + @stack.length.to_s \
                   + " item(s)."
-        throw IndexError.new(message)
+        raise IndexError.new(message)
       end
 
       right = @stack.pop()
@@ -46,7 +46,7 @@ class Calculator
       return self.push(left.method(arg).(right))
     else
       message = "argument must be number or operator. Argument was: " + arg
-      throw ArgumentError.new(message)
+      raise ArgumentError.new(message)
     end
   end
 end
