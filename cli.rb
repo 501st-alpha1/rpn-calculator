@@ -17,27 +17,41 @@
 
 require './calculator.rb'
 
-puts "Starting RPN calculator..."
-puts "Enter one or more numbers or operators and press Enter."
-puts "To quit, type q or Ctrl-D."
+# Puts something only if attached to interactive TTY.
+def putsi(text = nil)
+  if $stdin.tty?
+    puts text
+  end
+end
+
+# Print something only if attached to interactive TTY.
+def printi(text)
+  if $stdin.tty?
+    print text
+  end
+end
+
+putsi "Starting RPN calculator..."
+putsi "Enter one or more numbers or operators and press Enter."
+putsi "To quit, type q or Ctrl-D."
 
 calculator = Calculator.new
 
 while true
-  print '> '
+  printi '> '
   input = gets
 
   # Handle EOF / Ctrl-D
   if input.nil?
-    puts
-    puts "Goodbye!"
+    putsi
+    putsi "Goodbye!"
     break
   end
 
   input = input.chomp
 
   if input == 'q'
-    puts "Goodbye!"
+    putsi "Goodbye!"
     break
   end
 
