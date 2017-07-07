@@ -25,7 +25,16 @@ calculator = Calculator.new
 
 while true
   print '> '
-  input = gets.chomp
+  input = gets
+
+  # Handle EOF / Ctrl-D
+  if input.nil?
+    puts
+    puts "Goodbye!"
+    break
+  end
+
+  input = input.chomp
 
   if input == 'q'
     puts "Goodbye!"
