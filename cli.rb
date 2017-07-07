@@ -51,6 +51,8 @@ while true
       result = calculator.push(arg)
     rescue ZeroDivisionError => e
       puts "Error, cannot divide by zero."
+    rescue *[IndexError, ArgumentError] => e
+      puts "Error: #{e.message}"
     end
   end
 
