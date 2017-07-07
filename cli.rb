@@ -55,6 +55,16 @@ while true
     break
   end
 
+  if input == 'undo'
+    begin
+      result = calculator.undo
+      puts "Removed last item (#{result}) from stack."
+      next
+    rescue IndexError => e
+      puts "Error: #{e.message}"
+    end
+  end
+
   # Split input string by whitespace.
   args = input.split
 
