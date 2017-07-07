@@ -23,6 +23,12 @@ class Calculator
 
   def push(arg)
     if arg.is_number?
+      if arg.is_float?
+        arg = arg.to_f
+      else
+        arg = arg.to_i
+      end
+
       @stack.push(arg)
 
       return arg
