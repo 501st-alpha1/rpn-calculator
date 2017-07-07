@@ -39,6 +39,10 @@ class Calculator
         raise IndexError.new(message)
       end
 
+      if @stack.last == 0 && arg == '/'
+        raise ZeroDivisionError.new("cannot divide by zero.")
+      end
+
       right = @stack.pop()
       left = @stack.pop()
 
