@@ -51,8 +51,8 @@ class Calculator
         raise ZeroDivisionError.new("cannot divide by zero.")
       end
 
-      right = @stack.pop()
-      left = @stack.pop()
+      right = @stack.pop
+      left = @stack.pop
 
       # See https://stackoverflow.com/a/20019672/2747593
       return self.push(left.method(arg).(right))
