@@ -33,6 +33,12 @@ class Calculator
 
       return arg
     elsif ['+', '-', '*', '/'].include?(arg)
+      if @stack.length < 2
+        message = "operator applied when stack has " + @stack.length.to_s \
+                  + " item(s)."
+        throw IndexError.new(message)
+      end
+
       right = @stack.pop()
       left = @stack.pop()
 
