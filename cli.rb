@@ -41,9 +41,20 @@ while true
     break
   end
 
-  begin
-    puts calculator.push(input)
-  rescue ZeroDivisionError => e
-    puts "Error, cannot divide by zero."
+  # Split input string by whitespace.
+  args = input.split
+
+  result = nil
+
+  args.each do |arg|
+    begin
+      result = calculator.push(arg)
+    rescue ZeroDivisionError => e
+      puts "Error, cannot divide by zero."
+    end
+  end
+
+  if !result.nil?
+    puts result
   end
 end
