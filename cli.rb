@@ -49,9 +49,7 @@ while true
   args.each do |arg|
     begin
       result = calculator.push(arg)
-    rescue ZeroDivisionError => e
-      puts "Error, cannot divide by zero."
-    rescue *[IndexError, ArgumentError] => e
+    rescue *[IndexError, ArgumentError, ZeroDivisionError] => e
       puts "Error: #{e.message}"
     end
   end
