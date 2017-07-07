@@ -51,11 +51,18 @@ class Calculator
         raise ZeroDivisionError.new("cannot divide by zero.")
       end
 
-      right = @stack.pop
-      left = @stack.pop
+      right = @stack.pop.to_f
+      left = @stack.pop.to_f
 
       # See https://stackoverflow.com/a/20019672/2747593
-      return self.push(left.method(arg).(right))
+      result = left.method(arg).(right)
+
+      # Cast back to int if possible.
+      if result.to_i.to_f == result
+        result = result.to_i
+      end
+
+      return self.push(result)
     else
       message = "input must be number or operator. Input was: " + arg
       raise ArgumentError.new(message)
