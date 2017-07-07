@@ -21,6 +21,14 @@ class Calculator
     @stack = []
   end
 
+  def undo
+    if @stack.length < 1
+      raise IndexError.new("nothing else to undo")
+    end
+
+    return @stack.pop
+  end
+
   def push(arg)
     if arg.is_number?
       if arg.is_float?
