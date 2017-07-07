@@ -45,7 +45,7 @@ class Calculator
       # See https://stackoverflow.com/a/20019672/2747593
       return self.push(left.method(arg).(right))
     else
-      message = "argument must be number or operator. Argument was: " + arg
+      message = "input must be number or operator. Input was: " + arg
       raise ArgumentError.new(message)
     end
   end
