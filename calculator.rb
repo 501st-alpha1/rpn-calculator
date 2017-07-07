@@ -14,13 +14,15 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+require './extensions.rb'
+
 class Calculator
   def initialize
     @stack = []
   end
 
   def push(arg)
-    if arg.is_a? Numeric
+    if arg.is_number?
       @stack.push(arg)
 
       return arg
