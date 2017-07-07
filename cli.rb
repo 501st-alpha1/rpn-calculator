@@ -61,6 +61,7 @@ while true
   result = nil
 
   args.each do |arg|
+    result = nil
     begin
       result = calculator.push(arg)
     rescue *[IndexError, ArgumentError, ZeroDivisionError] => e
