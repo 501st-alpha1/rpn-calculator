@@ -63,6 +63,14 @@ $ echo "1 1 +" | docker run -i rpn-calculator
 2
 ```
 
+## Development
+
+To update the Ruby gems via. a Docker container, do:
+
+```
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.4 bundle install
+```
+
 ## Tests
 
 Automatic tests use RSpec, and so can be run with:
