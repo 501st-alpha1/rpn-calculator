@@ -1,0 +1,12 @@
+sudo: required
+
+language: ruby
+
+services:
+  - docker
+
+before_install:
+  - docker build -t 501stalpha1/rpn-calculator .
+
+script:
+  - docker run -t 501stalpha1/rpn-calculator rspec
