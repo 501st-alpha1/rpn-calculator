@@ -10,3 +10,7 @@ before_install:
 
 script:
   - docker run -t 501stalpha1/rpn-calculator rspec
+
+after_success:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker push 501stalpha1/rpn-calculator
