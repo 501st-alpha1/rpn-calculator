@@ -1,6 +1,8 @@
 # rpn-calculator
 A command-line Reverse Polish Notation (RPN) calculator, written as part of the On-Site interview process.
 
+[![Coverage Status](https://coveralls.io/repos/github/501st-alpha1/rpn-calculator/badge.svg?branch=master)](https://coveralls.io/github/501st-alpha1/rpn-calculator?branch=master)
+
 ## Usage
 
 If you have Ruby installed locally, you can run `cli.rb` directly.
