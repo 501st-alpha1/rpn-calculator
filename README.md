@@ -58,3 +58,17 @@ To pipe in the input data, drop the `-t` argument from the `docker run` command:
 $ echo "1 1 +" | docker run -i rpn-calculator
 2
 ```
+
+## Tests
+
+Automatic tests use RSpec, and so can be run with:
+
+```
+rspec
+```
+
+To run in the Docker container, do:
+
+```
+docker run -t rpn-calculator rspec
+```
