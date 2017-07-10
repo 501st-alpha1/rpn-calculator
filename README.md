@@ -39,6 +39,12 @@ If you don't have Ruby installed locally, you can use the provided Docker image 
 docker build -t rpn-calculator .
 ```
 
+Or pull a pre-built version from Docker Hub:
+
+```
+docker pull 501stalpha1/rpn-calculator
+```
+
 An interactive session may be started as:
 
 ```
