@@ -72,4 +72,28 @@ RSpec.describe Calculator do
 
     expect(result).to eq(0.625)
   end
+
+  it "divides a number by zero" do
+    c = Calculator.new
+
+    c.push("5")
+    c.push("0")
+
+    expect{ c.push("/") }.to raise_exception(ZeroDivisionError)
+  end
+
+  it "applies an operator when not enough items" do
+    c = Calculator.new
+
+    c.push("5")
+
+    expect{ c.push("/") }.to raise_exception(IndexError)
+  end
+
+  it "rejects other input" do
+    c = Calculator.new
+
+    expect{ c.push("foo") }.to raise_exception(ArgumentError)
+    expect{ c.push("_") }.to raise_exception(ArgumentError)
+  end
 end
