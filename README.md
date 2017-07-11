@@ -74,7 +74,7 @@ $ echo "1 1 +" | docker run -i rpn-calculator
 To update the Ruby gems via. a Docker container, do:
 
 ```
-docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.4 bundle install
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.4 bundle update
 ```
 
 ## Tests
