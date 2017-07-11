@@ -12,8 +12,10 @@ script:
   - docker run -t -e "CI=$CI" -e "COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN" "$DOCKER_USERNAME/rpn-calculator" rspec
 
 after_success:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push "$DOCKER_USERNAME/rpn-calculator"
+  - if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push "$DOCKER_USERNAME/rpn-calculator";
+    fi
 
 branches:
   only:
