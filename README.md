@@ -92,3 +92,7 @@ To run in the Docker container, do:
 ```
 docker run -t rpn-calculator rspec
 ```
+
+## License
+
+As indicated in the file headers, this project is licensed under the GNU GPL, see [the LICENSE file](./LICENSE) for details.
