@@ -1,6 +1,8 @@
 # rpn-calculator
 A command-line Reverse Polish Notation (RPN) calculator, written as part of the On-Site interview process.
 
+[![Build Status](https://travis-ci.org/501st-alpha1/rpn-calculator.svg?branch=master)](https://travis-ci.org/501st-alpha1/rpn-calculator)
+
 [![Coverage Status](https://coveralls.io/repos/github/501st-alpha1/rpn-calculator/badge.svg?branch=master)](https://coveralls.io/github/501st-alpha1/rpn-calculator?branch=master)
 
 ## Usage
@@ -37,6 +39,12 @@ If you don't have Ruby installed locally, you can use the provided Docker image 
 docker build -t rpn-calculator .
 ```
 
+Or pull a pre-built version from Docker Hub:
+
+```
+docker pull 501stalpha1/rpn-calculator
+```
+
 An interactive session may be started as:
 
 ```
@@ -59,6 +67,14 @@ To pipe in the input data, drop the `-t` argument from the `docker run` command:
 ```
 $ echo "1 1 +" | docker run -i rpn-calculator
 2
+```
+
+## Development
+
+To update the Ruby gems via. a Docker container, do:
+
+```
+docker run --rm -v "$PWD":/usr/src/app -w /usr/src/app ruby:2.4 bundle update
 ```
 
 ## Tests
