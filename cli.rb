@@ -70,6 +70,7 @@ while true
 
   result = nil
 
+  # Process each item of input array.
   args.each do |arg|
     result = nil
     begin
