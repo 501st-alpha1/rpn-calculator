@@ -16,11 +16,15 @@
 
 require './extensions.rb'
 
+# Main RPN calculator logic.
 class Calculator
   def initialize
     @stack = []
   end
 
+  # Undo by removing the last item from the stack.
+  #
+  # Limitation: can't undo application of operations.
   def undo
     if @stack.length < 1
       raise IndexError.new("nothing else to undo")
@@ -29,6 +33,11 @@ class Calculator
     return @stack.pop
   end
 
+  # Push an item onto the stack.
+  #
+  # If `arg` is a number, just push it to the stack.  If it's an operator, then
+  # apply the operator and push the result to the stack.  In either case, return
+  # what was just pushed to the stack.
   def push(arg)
     if arg.is_number?
       if arg.is_float?

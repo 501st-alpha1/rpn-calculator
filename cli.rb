@@ -76,6 +76,8 @@ while true
       result = calculator.push(arg)
     rescue *[IndexError, ArgumentError, ZeroDivisionError] => e
       puts "Error: #{e.message}"
+
+      # If not interactive, abort on first error.
       if !$stdin.tty?
         break
       end
