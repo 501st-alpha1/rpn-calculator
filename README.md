@@ -5,7 +5,7 @@ A command-line Reverse Polish Notation (RPN) calculator, written as part of the 
 
 [![Coverage Status](https://coveralls.io/repos/github/501st-alpha1/rpn-calculator/badge.svg?branch=master)](https://coveralls.io/github/501st-alpha1/rpn-calculator?branch=master)
 
-The main logic is in the [Calculator](./calculator.rb) class.  The primary method is `push`, used to push a new item onto the stack and calculate any result.  Results are calculated immediately, because deferring the calculations would add unnecessary overhead and complexity.
+The main logic is in the [Calculator](./calculator.rb) class.  The primary method is `push`, used to push a new item onto the stack and calculate any result.  Results are calculated immediately, because deferring the calculations would add unnecessary overhead and complexity.  A stack (technically a Ruby array, which includes stack functionality) is used because RPN only needs access to the top of the stack.
 
 ## Usage
 
